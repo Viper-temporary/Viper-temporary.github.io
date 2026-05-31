@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <title>Checkout</title>
+    </head>
+        
+    <body class="bg-light">
+        <style>
+            h1, p, h2, b,div {
+            font-family: "Space Grotesk", sans-serif;
+            }
+        </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" class="nav-link" href="Index.html">Porfolio<span class="sr-only"> </span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Index.html">Hobbies<span class="sr-only"> Hobbies</span></a>
+                </li> 
+                <li class="nav-item active">
+                    <a class="nav-link" href="Doggy.html">Dog-Page<span class="sr-only"> Dog-Page</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Travel.html">Travel<span class="sr-only">Travel</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="LaneTech.HTML">Lane tech<span class="sr-only">Lane Tech</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Indexy.html" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Skatey Skateboard
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Indexy.html"> Home Page</a>
+                        <a class="dropdown-item" href="extra.html"> Extra Skateboard</a>
+                        <a class="dropdown-item" href="Checkout.html">Checkout</a>
+                    </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Index.html" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Recpie
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Recipe1.HTML">Recipe 1 </a>
+                        <a class="dropdown-item" href="Recipe2.HTML">Recipe 2 (Css)</a>
+                        <a class="dropdown-item" href="Recipe3.html">Recipe 3 (Bootstrap)</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="card p-4 shadow">
+            <h1>Checkout</h1>
+            <!-- <hr> --> 
+            <div class="container mb-4 p-3 border rounded bg-white">
+                <h4>Your Item</h4>
+                <p><b></b> <span id="product"></span></p>
+                 <p><b></b> <span id="quantity"></span></p>
+                   <p><b></b> <span id="unitPrice"></span></p>
+                     <p><b>Subtotal:</b> $<span id="subtotalPreview"></span></p>
+            </div>
+                <h3>Order Summary</h3>
+                    <p><b>Shipping:</b> $<span id="shipping"></span></p>
+                     <p><b>Tax (13%):</b> $<span id="taxes"></span></p>
+                      <h4> Total: $<span id="total"></span> </h4>
+                                                                                <!-- <hr> --> 
+                            <h3>Shipping Info</h3>
+
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label>Drop the gmail for a discount! (optional) </label>
+                    <input type="text" id="discount" class="form-control"> <!-- we dont use required because its optional-->
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" class="form-control" required> 
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" id="address" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="city" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" id="postal" class="form-control" required> <!-- I have no idea wat a frm control is-->
+                </div>
+
+                <button type="submit" class="btn btn-success"> <!-- BTN is button but slang-->
+                    Place Order
+                </button>
+            </form>
+            <div id="confirmation" class="mt-4"></div>
+        </div>
+    </div>
+        <audio controls autoplay>
+            <source src="Media/2-13. Aria Math.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+            const cart = JSON.parse(localStorage.getItem("cart")) || []; //I have no idea what this part is, i just googled and slap it on here
+            let subtotal = 0;
+            let cartHTML = "";
+
+            // build cart display
+            cart.forEach(item => {
+                let itemTotal = item.price * item.quantity; 
+                subtotal += itemTotal;
+                cartHTML += `
+                    <div class="border p-2 mb-2 rounded bg-white">
+                        <p><b>Product:</b> ${item.product}</p>
+                        <p><b>Quantity:</b> ${item.quantity}</p>
+                        <p><b>Price:</b> $${item.price}</p>
+                        <p><b>Total:</b> $${itemTotal.toFixed(2)}</p>
+                    </div>
+                `;
+            });
+
+            // show cart items in product container
+            document.getElementById("product").innerHTML = cartHTML;
+
+            // calculations
+            const shipping = 15;
+            const taxes = subtotal * 0.13;
+            const discount = shipping + taxes / 15
+            const total = subtotal + shipping + taxes + discount;
+
+            // update totals needed help I think
+            document.getElementById("subtotalPreview").textContent = subtotal.toFixed(2);
+            document.getElementById("shipping").textContent = shipping.toFixed(2);
+            document.getElementById("taxes").textContent = taxes.toFixed(2);
+            document.getElementById("total").textContent = total.toFixed(2);
+
+            // checkout form, I had to google this part below 
+                document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    
+                    let name = document.getElementById("name").value;
+                    let address = document.getElementById("address").value;
+                    let city = document.getElementById("city").value;
+                    let postal = document.getElementById("postal").value;
+                    document.getElementById("confirmation").innerHTML = `
+                        <div class="alert alert-success">
+                            <h4>Order Confirmed</h4>
+                            <p><b>Name:</b> ${name}</p>
+                            <p><b>Address:</b> ${address}</p>
+                            <p><b>City:</b> ${city}</p>
+                            <p><b>Postal:</b> ${postal}</p>
+                            <!-- <hr> -->
+                            <p><b>Total Paid:</b> $${total.toFixed(2)}</p>
+                        </div>
+                    `;
+                    // reset form
+                    document.getElementById("checkoutForm").reset();
+                    // clear cart
+                    localStorage.removeItem("cart");
+
+                });
+        </script>
+    </body>
+</html>

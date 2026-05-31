@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+    <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+        <title>More Skateboards</title>
+    </head>
+    <body class="bg-light">
+        <style>
+        h1, p, h2, b,div {
+            font-family: "Space Grotesk", sans-serif;
+            }
+        </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" class="nav-link" href="Index.html">Porfolio<span class="sr-only"> </span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Index.html">Hobbies<span class="sr-only"> Hobbies</span></a>
+                </li> 
+                <li class="nav-item active">
+                    <a class="nav-link" href="Doggy.html">Dog-Page<span class="sr-only"> Dog-Page</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Travel.html">Travel<span class="sr-only">Travel</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="LaneTech.HTML">Lane tech<span class="sr-only">Lane Tech</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Indexy.html" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Skatey Skateboard
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Indexy.html"> Home Page</a>
+                        <a class="dropdown-item" href="extra.html"> Extra Skateboard</a>
+                        <a class="dropdown-item" href="Checkout.html">Checkout</a>
+                    </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Index.html" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Recpie
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Recipe1.HTML">Recipe 1 </a>
+                        <a class="dropdown-item" href="Recipe2.HTML">Recipe 2 (Css)</a>
+                        <a class="dropdown-item" href="Recipe3.html">Recipe 3 (Bootstrap)</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">More Skateboards</h1>
+            <div class="row">
+            <!-- white -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                <img src="Media/WhiteDeck.avif" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>White Board</h5>
+                    <input type="range" min="1" max="10" value="1"
+                        id="whiteSlider"
+                        oninput="update('white',20)">
+                    <span id="whiteQty">1</span>
+                    <p>Total: $<span id="whitePrice">20.00</span></p>
+                    <button class="btn btn-primary"
+                            onclick="addToCart('White Board',20,'whiteSlider')">
+                    Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+            <!-- Oring -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img src="Media/Orange.jpg" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>Orange Board</h5>
+                    <input type="range" min="1" max="10" value="1"
+                        id="orangeSlider"
+                        oninput="update('orange',20)">
+                    <span id="orangeQty">1</span>
+                    <p>Total: $<span id="orangePrice">20.00</span></p>
+                    <button class="btn btn-primary"
+                            onclick="addToCart('Orange Board',20,'orangeSlider')">
+                    Add to Cart
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <!--YELOW -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+            <img src="Media/HotSellYelow.webp" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>Yellow Board</h5>
+                    <input type="range" min="1" max="10" value="1"
+                        id="yellowSlider"
+                        oninput="update('yellow',20)">
+                    <span id="yellowQty">1</span>
+                    <p>Total: $<span id="yellowPrice">20.00</span></p>
+                    <button class="btn btn-primary" onclick="addToCart('Yellow Board',20,'yellowSlider')"> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                <img src="Media/HotSellBlack.jpg" class="card-img-top" height="250">
+                <div class="card-body">
+                        <h5>Black Board</h5>
+                        <input type="range" min="1" max="10" value="1" id="blackSlider" oninput="update('black',20)">
+                        <span id="blackQty">1</span>
+                        <p>Total: $<span id="blackPrice">20.00</span></p>
+                        <button class="btn btn-primary" onclick="addToCart('Black Board',20,'blackSlider')"> Add to Cart </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- green -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                <img src="Media/GreenDeck.jpg" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>Green Board</h5>
+                    <input type="range" min="1" max="10" value="1" id="greenSlider" oninput="update('green',20)">
+                    <span id="greenQty">1</span>
+                    <p>Total: $<span id="greenPrice">20.00</span></p>
+                    <button class="btn btn-primary" onclick="addToCart('Green Board',20,'greenSlider')"> Add to Cart </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLUE -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                <img src="Media/HotSellBlue.jpg" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>Blue Board</h5>
+                    <input type="range" min="1" max="10" value="1" id="blueSlider"oninput="update('blue',20)">
+                    <span id="blueQty">1</span>
+                    <p>Total: $<span id="bluePrice">20.00</span></p>
+                    <button class="btn btn-primary" onclick="addToCart('Blue Board',20,'blueSlider')"> Add to Cart </button>
+                </div>
+            </div>
+        </div>
+
+        <!--  blue -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+            <img src="Media/PurpleDeck.jpg" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>Purple Board</h5>
+                    <input type="range" min="1" max="10" value="1" id="purpleSlider" oninput="update('purple',20)">
+                    <span id="purpleQty">1</span>
+                    <p>Total: $<span id="purplePrice">20.00</span></p>
+                    <button class="btn btn-primary" onclick="addToCart('Purple Board',20,'purpleSlider')"> Add to Cart </button>
+                </div>
+            </div>
+        </div>
+        
+        <!--  red -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                <img src="Media/RedDeck.jpg" class="card-img-top" height="250">
+                    <div class="card-body">
+                            <h5>Red Board</h5>
+                        <input type="range" min="1" max="10" value="1" id="redSlider" oninput="update('red',20)">
+                        <span id="redQty">1</span>
+                        <p>Total: $<span id="redPrice">20.00</span></p>
+                        <button class="btn btn-primary" onclick="addToCart('Red Board',20,'redSlider')"> Add to Cart
+                        </button>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Pink Boardthingy -->
+        <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+                    <img src="Media/PinkDeck.avif" class="card-img-top" height="250">
+                <div class="card-body">
+                    <h5>Pink Board</h5>
+                    <input type="range" min="1" max="10" value="1" id="pinkSlider" oninput="update('pink',20)">
+                    <span id="pinkQty">1</span>
+                    <p>Total: $<span id="pinkPrice">20.00</span></p>
+                    <button class="btn btn-primary" onclick="addToCart('Pink Board',20,'pinkSlider')"> Add to Cart </button>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Checky Checkout :D -->
+            <from>
+                <div class="text-center mt-4">
+                    <button class="btn btn-success btn-lg"onclick="goToCheckout()"> 
+                        Go to Checkout
+                    </button>
+                </div>
+            </from>
+    </div>
+        <audio controls autoplay>
+            <source src="Media/2-13. Aria Math.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+            // slider update
+            function update(color, price) {
+                let qty = document.getElementById(color + "Slider").value;
+                document.getElementById(color + "Qty").textContent = qty;
+                document.getElementById(color + "Price").textContent = (qty * price).toFixed(2);
+            }
+
+            // cart system, what this means is 
+            function addToCart(product, price, sliderId) {
+                let qty = Number(document.getElementById(sliderId).value);
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let existing = cart.find(i => i.product === product);
+                if (existing) {
+                    existing.quantity += qty;
+                } else {
+                    cart.push({ product, price, quantity: qty });
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert(product + " added to cart!");
+            }
+            // checkout button
+            function goToCheckout() {
+                window.location.href = "Checkout.html";
+            }
+        </script>
+    </body>
+</html>
+<!-- DEFINITONS OF THIS STUFF I DONT KNOW ABOUT -->
+
+
+
+
+
+<!--json.parse 
+ the process of converting a JSON-formatted string into a native object, data structure that the programming can present -->
+
+
+<!--   ||
+    (Logical OR): This operator checks the value on its left. If that value a "truthy," and then it returns it. If it is "falsy" (examples, null, undefined, 0, "", or false), it returns the value on the right.-->
+
+
+<!-- []
+  (Empty Array): This is the literal syntax for creating a new, empty array -->
+
+
+<!-- Json.stringify
+ serialization. It is commonly used when you need to send data from a web browser to a server or store it in a place like localStorage, which only accepts strings.-->
+
+
+<!--    textContent
+  The textContent property is a standard JavaScript interface used to get or set the text content of a DOM node and all its descendants. -->
+
+  
+<!-- btn btn-priamry is just color of button -->
+
+  <!--                     <input type="range" min="1" max="10" value="1" just means a slider min and max-->
+
+
+  
+<!--let cart = JSON.parse(localStorage.getItem("cart")) || [];
+This searches the browser's localStorage for data stored under the key "cart". Because localStorage only stores data as strings, it returns a string, so This converts the retrieved string back into a usable JavaScript object or array.|| []: This is a logical OR operator used as a "fallback". If the previous steps result in a "falsy" value, the code assigns an empty array [] to the variable This declares a new variable named cart to hold the final result, makin sure the code is valid-->
+<!-- -->
